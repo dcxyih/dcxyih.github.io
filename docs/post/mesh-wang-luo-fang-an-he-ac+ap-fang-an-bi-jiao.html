@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="之前贴了的案例简单的描述了自己认为ac+ap和mesh方案的一个比较。">
+<meta property="og:title" content="mesh网络方案和ac+ap方案比较">
+<meta property="og:description" content="之前贴了的案例简单的描述了自己认为ac+ap和mesh方案的一个比较。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://dcxyih.github.io/post/mesh-wang-luo-fang-an-he-ac%2Bap-fang-an-bi-jiao.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
+<title>mesh网络方案和ac+ap方案比较</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">mesh网络方案和ac+ap方案比较</h1>
+<div class="title-right">
+    <a href="https://dcxyih.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/dcxyih/dcxyih.github.io/issues/4" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>之前贴了的案例简单的描述了自己认为ac+ap和mesh方案的一个比较。很多小伙伴还是不太理解<br>
+今天给大家带来一个全网最全的回答。也能帮助大家在家庭或办公室网络的 WiFi 覆盖方案选择上带来参考帮助。</p>
+<p>那关于这几点首先我们需要先知道几个概念，mesh，ap，Ethernet backhaul（有线回程），802.11kvr（快速漫游）</p>
+<h3>什么是mesh网络</h3>
+<hr>
+<p>mesh网络（mesh networkig）又称网状网络系统，与因特网路由节点类似。2002 年，当市场上开始出售基于 802.11b 和 802.11a 的产品时，,多数无线mesh网络产品焦点在于如何供室外大范围覆盖 Wi-Fi。其理念是让服务商/运营商为终端用户设备供城市级的Wi-Fi接入，这些设备包括笔记本电脑、掌上电脑和Windows移动PDA(如同 我们今天使用智能手机和移动网络那样)。</p>
+<p>随着后来的商用化，面向家庭的mesh技术主要是采用IEEE 802.11S、WDS和multi-AP协议<br>
+<br><br>
+mesh网络对于家庭应用而言主要特点就是：</p>
+<p>• mesh网络一般都是通过主无线网络单元和多个“卫星”单元的形式出现<br>
+• 主无线网络单元仍然需要通过网线与家里的调制解调器链接<br>
+• 可以方便客户端只有链接和漫游到同一个SSID （WiFi名称之下），相当于在你的家中创建了一个属于WiFi的“伞”<br>
+• “卫星”单元可以通过无线回程或者有线回程链路链接到主无线单元。<br>
+• 自愈功能，当mesh网络其中的一个“卫星”单元出现问题时断开链接或者延迟较高时，整个网络会进行自愈，附近的节点会自动补上让终端重新连接到整个网络中。</p>
+<hr>
+<p>简而言之，mesh网络是一种无线局域网(WLAN)，它将所有 wifi 节点连接到一个 SSID中，从而为您的家庭提供稳定的互联网连接。 如上图所示，有一个主mesh路由器单元连接到ISP。“卫星”节点通过高速无线连接的WiFi-回程链路连接到主路由器单元。 所有这些mesh单元都创建了一个具有单个SSID的统一WLAN网络。客户端自动连接到可用的最佳无线单元。当mesh 节点 1卫星节点需要临时关闭，在mesh 节点 2动态地切换到 mesh 节点 3后,Wi-Fi 摄像机仍然可以将画面传送到互联网上。</p>
+<p><strong>优缺点总结</strong></p>
+<p>优点<br>
+• 节点越多，覆盖范围越好<br>
+• 无线客户端可以在网络中任意漫游<br>
+• 搭建过程非常轻松，即使是小白也能轻松上手</p>
+<p>缺点<br>
+• 可能需要多个 mesh 卫星单元来消除死角<br>
+• 即使路由器工作正常，也会出现过度自愈（杀伤）现象</p>
+<p><strong>常见mesh路由器品牌和型号</strong></p>
+<p>• google mesh</p>
+<p>• eero mesh</p>
+<p>• netgear obri</p>
+<p>• ubiquiti amplifi</p>
+<p>PS：为什么都推荐国外品牌，也主要因为国外地少人稀，所以mesh网络的发展比国内要好。国内mesh路由器质量层次不齐，有些仅仅是作为传统路由器增加了mesh协议，也有很多不支持有线回程。</p>
+<h3>什么是AC+AP （无线接入点）呢？</h3>
+<p>这个先要谈到什么是AP，access point，一般称为接入点。是一种计算机网络硬件，它允许其他WiFi设备链接到有线网络中。作为独立设备可以和路由器有线链接。在传统无线路由器中，往往也是这些设备的一个组成部分。而这些都统称为胖ap，胖AP的结构特点是将WiFi的物理层、 用户数据加密、用户认证、QoS、网络管理、漫游技术 以及其他应用层的功能集于一身， 因此它的功能全面，但结构复杂。随着无线网络的发展，需要大量部署AP的地方越来越多，胖AP的弊端也越来越明显。因此，AP+AC的架构应运而生。 AP+AC架构中的无线控制器AC负责网络的接入控制、转发和统计、AP的配置监控、AP的网管代理以及安全控制等，AP负责802.11报文的加解密、PHY（无线物理层）功能、RF（射频）空口的统计等功能。简而言之就是将一体设备分为两个部分，方便之后的扩展来满足越来越多的WiFi需求。也可以理解成原先的胖系统是一台没有外接口的笔记本电脑，现在的ac+ap是可以外接很多显示器，键盘，鼠标，打印机的组装电脑。</p>
+<p><strong>优缺点总结</strong></p>
+<p>优点<br>
+• 增强现有网络的信号。<br>
+• 通过 POE 供电，可以比传统路由器减少电源线连接<br>
+• 允许为多个设备提供相同的信号强度。<br>
+• 每个接入点的平滑过渡提供了灵活的网络。<br>
+• 比有线 LAN 或mesh系统更便宜、更具成本效益。</p>
+<p>缺点<br>
+• 实现方案必须在房屋装修时合理预埋网线。<br>
+• 虽然在网络体验上很好，但是网络性能与规划施工方案严重关联，对硬件的要求也较高。<br>
+• 需要专业的人员进行组网规划和数据配置，所以对于寻常百姓来说，这种方案并不亲 民<br>
+• 可能会发生渠道和网络的重叠。需要为每个 AP 手动更改 WiFi 频道，使其不会与其他 AP 重叠在同一频道上（以避免干扰）。</p>
+<p>以下是可以选择的一些示例。<br>
+• ubiquiti unifi<br>
+• 思科 meraki<br>
+• 新华三<br>
+• 锐捷</p>
+<p>PS：其实我们也可以把mesh路由器算作是集合路由器，ap，增加了mesh技术的一台设备，可以理解成一体机电脑。<br>
+而ac+ap是将功能都单独分开，每个独立运作的多台设备，可以理解成组装电脑。</p>
+<p>作为全面的一个对比，当然不会只给出简单的优缺点让大家自己分析。接下去会从家庭用户最关心的几个点去进行对比分析，帮助看这篇文章的你选择最适合你的方案。</p>
+<p><strong>第1局：Wi-Fi 速度</strong></p>
+<p>WiFi 速度是大家选择无线覆盖的最核心点，这两个方案在WiFi速度上都做得很好。（千万别购买什么所谓的 WiFi 放大器，它的确可以为你解决网络死角问题，但是传输过程中网速势必会有很大损失。）<br>
+ac+ap和 Mesh 的主要区别在于<br>
+对于支持有线回程的mesh路由器，它其实就是一个AP节点，但是由于其mesh的特性，当一个节点出现断链或者延迟，自愈功能会使得mesh路由器专为无线桥接，而使用WiFi协议进行桥接的mesh路由器，势必会造成占原本的WiFi资源，导致无线信号出现延迟或者速度下降（有一些厂商通过增加一个额外的5G频段来进行mesh中继，但是本身多出来的5g频段也会让原本的wifi信道变得拥挤，使得空间中的噪声变得更多）并且由于ac+ap本身就是通过网线链接到主路由，意味着不存在一个节点到一个跳转，通过ac也可以集中控制不会出现网速的折损。<br>
+因此这一局ac+ap微弱优势获胜</p>
+<p><strong>第2局：配置难度</strong></p>
+<p>在选择无线设备的时候，很多人也会扪心自问：“我是否可以驾驭的了”，对于大多数人来说他们可不想花几个小时甚至几天来设置设备。mesh路由器和传统的胖ap差不多，都是通过一个简单的即插即用的程序，不需要额外的电线网线，有不少甚至只需要一键或者下载app点几下，插好电连上网的mesh“卫星”单元会自动和主路由同步</p>
+<p>ac+ap则不同，设置起来很耗时间，部分厂家的设备还需要查阅资料，通过敲击命令行的方式进行设置，需要更改每个设备的不同设置，你可能还会需要掌握到很多全新的名词，WiFi信道，信道宽度，信噪比等等。</p>
+<p>种种上述原因都证明mesh方案成为这一局的赢家。如果你不想折腾，选 mesh 路由器就是你的首选了。<br>
+第3局：连接设备的范围和数量<br>
+对于很多想要接触mesh路由器和ac+ap的来说通常是拥有了一个大房子或者公司需要使用。如果一个无线网络方案不能为家里或者公司的每个房间提供无死角的服务，那么它也是不值得选取的。<br>
+这两个方案其实都能很好的解决这两个问题，ac+ap可以通过使用poe交换机连接更多的ap达到覆盖面积的增加，而mesh路由器也可以通过增加节点来扩大覆盖面积。<br>
+但是ap厂商通常都是专注企业市场，所以不论在设备天线还是带机量上都是有着极高的上限。而mesh路由器厂商通常都会建议设备节点数量（上限一般为5-7台），并且在带机量上也是远逊于ap设备的。<br>
+拼下限两者旗鼓相当，拼上限ac+ap遥遥领先。<br>
+ps:一些室外ap单台甚至能连接终端1000台以上。</p>
+<p>总结ac+ap获得了最终的胜利，然而这个结果也需要考虑到自身的需求，普通家庭和企业用户在需求上本身就存在很大的区别。ac+ap是大多数企业主所选择方案。但是对于家庭用户来说做无线网络方案选择时，ac+ap相较于mesh网络方案在网速，稳定性，带机量，范围等情况表现优势并不大。很多其他情况比如设备外观，中意品牌才是选择这个方案的最终原因。<br>
+另外我之前案例中提到的“小众品牌”ubiquiti的不少ap其实也都支持mesh功能，在有线断链后也能自愈组网无缝衔接。不过这个功能需要通过软件中的高级功能单独去设置。</p>
+<h3>个人总结</h3>
+<p>如果<br>
+• 你想要体验最极致的网速<br>
+• 你的家里有很多人，很多设备需要连接<br>
+• 你住在一个超大的庄园或者大别墅中<br>
+• 你住在员工宿舍或者办公室里<br>
+• 你不希望频繁重启设备<br>
+• 你对于自己的网络有较高的定制需求，例如网络安全，网速分配，访客网络等<br>
+• 你是一个真正的geek</p>
+<p>你可以选择ac+ap方案<br>
+如果<br>
+• 你想要一个科技感极强的设备<br>
+• 你住在中小型住宅或公寓中<br>
+• 你家里没有重新布网的条件<br>
+• 你想要简单的安装和配置<br>
+• 你家里没有以太网线。<br>
+• 你想要简单的安装设置。<br>
+• 你想要让别人以为你是一个geek</p>
+<p>Mesh完全可以满足你的要求！<br>
+PS：关于漫游，目前主流的快速漫游使用的是802.11kvr协议，具体详见维基百科的IEEE 802.11类目。对于无线ap和mesh路由器的选择上需要注意这些品牌设备是不是支持漫游协议。因此漫游效果是取决于设备而不是方案的选择。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://dcxyih.github.io">道寻常</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","dcxyih/dcxyih.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
