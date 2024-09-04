@@ -1,2 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>道寻常</title><link>https://dcxyih.github.io</link><description>道寻常</description><copyright>道寻常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://dcxyih.github.io</link></image><lastBuildDate>Tue, 03 Sep 2024 11:46:51 +0000</lastBuildDate><managingEditor>道寻常</managingEditor><ttl>60</ttl><webMaster>道寻常</webMaster><item><title>【转载】林奕含婚礼发言（文字版）</title><link>https://dcxyih.github.io/post/%E3%80%90-zhuan-zai-%E3%80%91-lin-yi-han-hun-li-fa-yan-%EF%BC%88-wen-zi-ban-%EF%BC%89.html</link><description>嗨，大家好。</description><guid isPermaLink="true">https://dcxyih.github.io/post/%E3%80%90-zhuan-zai-%E3%80%91-lin-yi-han-hun-li-fa-yan-%EF%BC%88-wen-zi-ban-%EF%BC%89.html</guid><pubDate>Tue, 03 Sep 2024 11:46:19 +0000</pubDate></item><item><title>这里是我的个人博客</title><link>https://dcxyih.github.io/post/zhe-li-shi-wo-de-ge-ren-bo-ke.html</link><description>这里是我的个人博客。</description><guid isPermaLink="true">https://dcxyih.github.io/post/zhe-li-shi-wo-de-ge-ren-bo-ke.html</guid><pubDate>Tue, 03 Sep 2024 06:15:21 +0000</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>道寻常</title><link>https://dcxyih.github.io</link><description>道寻常</description><copyright>道寻常</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://dcxyih.github.io</link></image><lastBuildDate>Wed, 04 Sep 2024 04:47:58 +0000</lastBuildDate><managingEditor>道寻常</managingEditor><ttl>60</ttl><webMaster>道寻常</webMaster><item><title>MarkDown语法</title><link>https://dcxyih.github.io/post/MarkDown-yu-fa.html</link><description># MD语法&#13;
+&#13;
+# 标题语法&#13;
+井号加空格是标题语法，最多6个井号&#13;
+# 一级&#13;
+## 二级&#13;
+### 三级&#13;
+#### 四级&#13;
+##### 五级&#13;
+###### 六级&#13;
+&#13;
+# 段落语法&#13;
+&#13;
+空白行分隔段落&#13;
+&#13;
+空白行分隔段落&#13;
+&#13;
+# 换行语法&#13;
+&#13;
+可以在文字的末尾添加两个或者多个空格，按回车。</description><guid isPermaLink="true">https://dcxyih.github.io/post/MarkDown-yu-fa.html</guid><pubDate>Wed, 04 Sep 2024 04:47:37 +0000</pubDate></item><item><title>【转载】林奕含婚礼发言（文字版）</title><link>https://dcxyih.github.io/post/%E3%80%90-zhuan-zai-%E3%80%91-lin-yi-han-hun-li-fa-yan-%EF%BC%88-wen-zi-ban-%EF%BC%89.html</link><description>嗨，大家好。</description><guid isPermaLink="true">https://dcxyih.github.io/post/%E3%80%90-zhuan-zai-%E3%80%91-lin-yi-han-hun-li-fa-yan-%EF%BC%88-wen-zi-ban-%EF%BC%89.html</guid><pubDate>Tue, 03 Sep 2024 11:46:19 +0000</pubDate></item><item><title>这里是我的个人博客</title><link>https://dcxyih.github.io/post/zhe-li-shi-wo-de-ge-ren-bo-ke.html</link><description>这里是我的个人博客。</description><guid isPermaLink="true">https://dcxyih.github.io/post/zhe-li-shi-wo-de-ge-ren-bo-ke.html</guid><pubDate>Tue, 03 Sep 2024 06:15:21 +0000</pubDate></item></channel></rss>
